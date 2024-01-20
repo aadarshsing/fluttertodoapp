@@ -26,7 +26,7 @@ class DatabaseHelper {
   static Future<int> updateNote(NoteData note) async {
     print('note updated');
     final db = await _getDB();
-    return db.update('Note', note.toMap(),
+    return await db.update('Note', note.toMap(),
         where: 'id = ?',
         whereArgs: [note.id],
         conflictAlgorithm: ConflictAlgorithm.replace);

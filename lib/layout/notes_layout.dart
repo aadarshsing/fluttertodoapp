@@ -35,10 +35,7 @@ class _NotesScreenState extends State<NotesScreen> {
                     final noteData = data![index];
                     return GestureDetector(
                         onTap: () {
-                          Navigator.of(context).push(MaterialPageRoute(
-                              builder: (context) => NoteScreen(
-                                    note: noteData,
-                                  )));
+                          Navigator.push(context,MaterialPageRoute(builder: (context)=>NoteScreen(note: noteData,)));
                           setState(() {});
                         },
                         child: NoteWidget(
